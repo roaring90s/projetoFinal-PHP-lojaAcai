@@ -1,0 +1,59 @@
+body {
+
+    font-family: "Roboto", sans-serif;
+    font-size: large;
+}
+
+.blurbox {
+
+    background-color: rgba(255, 255, 255, 0.2);
+    /* Fundo branco translúcido */
+    backdrop-filter: blur(10px);
+    /* Efeito de desfoque */
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    text-align: center;
+    color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    font-family: "Roboto", sans-serif;
+
+}
+
+div p a i {
+    color: #9a07c7;
+    padding-left: 20px;
+}
+
+div p a i:hover {
+    color: #f8f7fa;
+    transform: scale(2.2);
+    transition: 1.5s ease;
+    cursor: pointer;
+}
+
+.imagem-background {
+
+    background-image: url(/img/background.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+}
+
+.menu-item:hover {
+
+    transform: scale(1.2);
+    transition: 1.0s ease-in-out;
+}
+
+.button {
+
+    background: linear-gradient(45deg, #9138F5, #5338F5);
+}
+
+button:hover {
+
+    transition: 1.2s ease-in-out;
+    transform: scale(1.2);
+}

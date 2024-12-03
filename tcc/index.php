@@ -26,9 +26,9 @@
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      width: 15ch;
+      width: 26ch;
       overflow: hidden;
-      animation: animatext 0.9s linear infinite, anima steps(16) 2s;
+      animation: animatext 0.9s linear infinite, anima steps(26) 2s;
       white-space: nowrap;
       
     }
@@ -100,7 +100,7 @@
   <main>
     <!--===============================================================IMAGEM PRINCIPAL===============================================================================-->
     <div class="text">
-      <h1 class="font animatext">Deu aquela fome? </h1>
+      <h1 class="font animatext"> O sabor da fruta, direto pra você.</h1>
       <img src="\ProjetoTCC\img\fotoprincipal.webp" alt="Açaí delicioso" class="img-fluid">
     </div>
     <!--=================================================================CARDS PÁGINA PRINCIPAL=======================================================================-->

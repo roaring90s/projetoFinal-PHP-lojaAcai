@@ -54,7 +54,7 @@ $nome_usuario = $_SESSION['login'];
                 <div class="navbar-nav">
                     <a href="index.php" class="nav-link">Ínicio</a>
                     <a href="pedido.php" class="nav-link">Cardápio</a>
-                    <a href="logout.php" class="nav-link">Logout <i class="bi bi-person-fill"></i></a>
+                    <a href="logout.php" class="nav-link">Logout</a>
                 </div>
             </div>
         </div>
@@ -67,18 +67,18 @@ $nome_usuario = $_SESSION['login'];
         <div class="container py-4">
             <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 py-0">
                 <div class="col text-center mb-4">
-                    <div class="container ">
-                        <div class="card bg-cards shadow-lg">
+                    <div class="container">
+                        <div class="card h-100 bg-cards shadow-lg">
                             <div class="card-body ">
-                                <h5 class="card-title text-uppercase">REGISTRAR VENDA</h5>
-                                <p class="card-text">Aqui você pode registrar as vendas ou ver as vendas já realizadas.</p>
-                                <button class="btn btn-primary"><a href="#" class="text-decoration-none link">ADICIONAR VENDAS</a></button>
+                                <h5 class="card-title text-uppercase">FILA DE PEDIDOS</h5>
+                                <p class="card-text">Aqui você pode ver os pedidos pendentes e gerencia-los.</p>
+                                <button class="btn btn-primary"><a href="#" class="text-decoration-none link">VER FILA DE VENDAS</a></button>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="col text-center mb-4">
-                    <div class="card bg-cards shadow-lg">
+                    <div class="card h-100 bg-cards shadow-lg">
                         <div class="card-body">
                             <h5 class="card-title text-uppercase text-center">ESTOQUE</h5>
                             <p class="card-text">Aqui você pode ver todos os ingredientes e gerenciar estoque.</p>
@@ -87,7 +87,7 @@ $nome_usuario = $_SESSION['login'];
                     </div>
                 </div>
                 <div class="col col-md-06 text-center mb-4 d-flex align-items-center">
-                    <div class="card bg-cards shadow-lg">
+                    <div class="card h-100 bg-cards shadow-lg">
                         <div class="card-body">
                             <h5 class="card-title text-uppercase text-center">FUNCIONÁRIOS</h5>
                             <p class="card-text">Aqui você pode gerenciar todos os funcionários.</p>
@@ -107,7 +107,7 @@ $nome_usuario = $_SESSION['login'];
                     </div>
                 </div>
                 <div class="col col-md-06 text-center mb-4 d-flex align-items-center">
-                    <div class="card bg-cards shadow-lg">
+                    <div class="card h-100 bg-cards shadow-lg">
                         <div class="card-body">
                             <h5 class="card-title text-uppercase text-center">NOTAS FISCAIS</h5>
                             <p class="card-text">Gerenciamento das notas fiscais emitidas ao longo do dia.</p>

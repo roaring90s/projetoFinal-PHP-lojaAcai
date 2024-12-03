@@ -15,7 +15,7 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
     rel="stylesheet">
-  <title>Login - Rochedo Açaí</title>
+  <title>Registro - Rochedo Açaí</title>
   <style>
     body {
       /* CONFIGURAÇÃO DO CORPO DA PÁGINA */
@@ -47,7 +47,7 @@
 
     .input {
       border-radius: 20px;
-
+      
     }
   </style>
 </head>
@@ -61,17 +61,17 @@
       <div class=" container blurbox">
         <h1>Registre sua conta</h1>
         <h2>e aproveite o verdadeiro açaí </h2>
-        <div class="container-fluid p-3 text-center">
-          <p>Login: <input type="text" name="login" id="login" class="border-1 input"
-              placeholder="Login" required></p>
-          <p>Senha: <input type="password" name="senha" id="senha"
-              class="border-1 input" placeholder="Sua senha" required></p>
-          <p>Email: <input type="text" name="email" id="email"
-              class="border-1 input" placeholder="Email" required></p>
-          <p>Telefone: <input type="text" name="telefone" id="telefone" class="border-1 input"
-              placeholder="Telefone" required></p>
-          <p>Endereço: <input type="text" name="endereco" id="endereco"
-              class="border-1 input" placeholder="Endereco" required></p>
+        <div class="container p-3 text-center">
+          <p class="fw-bold" >Login: <input type="text" name="login" id="login" class="border-1 input"
+              placeholder=" Login" required></p>
+          <p class="fw-bold" >Senha: <input type="password" name="senha" id="senha"
+              class="border-1 input form" placeholder=" Sua senha" required></p>
+          <p class="fw-bold" >Email: <input type="text" name="email" id="email"
+              class="border-1 input" placeholder=" Email" required></p>
+          <p class="fw-bold" >Telefone: <input type="text" name="telefone" id="telefone" class="border-1 input"
+              placeholder=" Telefone" required></p>
+          <p class="fw-bold" >Endereço: <input type="text" name="endereco" id="endereco"
+              class="border-1 input" placeholder=" Endereco" required></p>
           <button type="submit" class="btn btn-primary">Registrar Conta</button>
 
         </div>

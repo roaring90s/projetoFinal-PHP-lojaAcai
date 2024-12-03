@@ -1,4 +1,4 @@
-<footer class="footer bg-dark text-white pt-5 pb-4">
+<footer class=" footer bg-dark text-white pt-5 pb-4">
     <!--===============================================RODAPÉ DA PÁGINA===============================================================-->
     <div class="container text-center text-md-left">
         <div class="row text-center text-md-left">

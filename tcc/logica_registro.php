@@ -1,22 +1,14 @@
 <?php
-$localhost = "localhost";
-$usuario = "root";
-$senha = "";
-$database = "rochedo";
+include("conexao.php");
 
-$conexao = new mysqli(hostname: "$localhost", username: "$usuario", password: "$senha", database: "$database");
-
-if ($conexao->connect_error) {
-    die("Conexão falhou: " . $conexao->connect_error);
-}
-
-$login = $_POST['login'];
-$senha = $_POST['senha'];
+$nome = $_POST['nome'];
 $email = $_POST['email'];
 $telefone = $_POST['telefone'];
 $endereco = $_POST['endereco'];
+$login = $_POST['login_cliente'];
+$senha = $_POST['senha'];
 
-$sql = "INSERT INTO cliente (nome, senha, email, telefone, endereco) VALUES ('$login', '$senha', '$email', '$telefone', '$endereco')";
+$sql = "INSERT INTO cliente (nome, email, telefone, endereco, login_cliente, senha) VALUES ('$nome','$email','$telefone','$endereco','$login', '$senha')";
 if ($conexao->query(query: $sql) === TRUE) {
     echo "Registrado com sucesso.";
     header(header: "Location: login.php");
@@ -25,3 +17,4 @@ if ($conexao->query(query: $sql) === TRUE) {
 }
 
 $conexao->close();
+?>

@@ -242,6 +242,33 @@ CREATE TABLE IF NOT EXISTS `rochedo`.`vendas_has_relatorio` (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
+-- -----------------------------------------------------
+-- Table `rochedo`.`carrinho`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `rochedo`.`carrinho` (
+  `idcarrinho` INT NOT NULL AUTO_INCREMENT,
+  `idcliente` INT NOT NULL,
+  `idproduto` INT NOT NULL,
+  `quantidade` INT NOT NULL,
+  `preco_unitario` DECIMAL(10, 2) NOT NULL,
+  `preco_total` DECIMAL(10, 2) GENERATED ALWAYS AS (`quantidade` * `preco_unitario`) STORED,
+  `data_adicao` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`idcarrinho`),
+  INDEX `fk_carrinho_cliente_idx` (`idcliente` ASC),
+  INDEX `fk_carrinho_produto_idx` (`idproduto` ASC),
+  CONSTRAINT `fk_carrinho_cliente`
+    FOREIGN KEY (`idcliente`)
+    REFERENCES `rochedo`.`cliente` (`idcliente`)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE,
+  CONSTRAINT `fk_carrinho_produto`
+    FOREIGN KEY (`idproduto`)
+    REFERENCES `rochedo`.`produto` (`idproduto`)
+    ON DELETE CASCADE
+    ON UPDATE CASCADE
+)
+ENGINE = InnoDB;
+
 
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;

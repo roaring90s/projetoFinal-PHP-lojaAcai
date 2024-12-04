@@ -87,9 +87,9 @@ $carrinho = isset($_SESSION['carrinho']) ? $_SESSION['carrinho'] : [];
                     <select class="form-select" id="forma_pagamento" name="forma_pagamento" required>
                         <option value="" disabled selected>Selecione</option>
                         <option value="cartao_credito">Cartão de Crédito</option>
-                        <option value="pix">Pix</option>
-                        <option value="boleto">Boleto</option>
+                        <option value="cartao_credito">Cartão de Débito</option>
                         <option value="dinheiro">Dinheiro</option>
+                        <option value="pix">Pix</option>
                     </select>
                 </div>
                 <div class="d-grid">

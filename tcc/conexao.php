@@ -1,14 +1,13 @@
-<?php 
-// Conectar ao banco de dados
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "rochedo"; // Nome do seu banco de dados
+<?php
 
-$conexao = new mysqli(hostname: $servername, username: $username, password: $password, database: $dbname);
 
-// Verificar conexão
+$localhost = "localhost";
+$usuario = "root";
+$senha = "";
+$database = "rochedo";
+
+$conexao = new mysqli(hostname: "$localhost", username: "$usuario", password: "$senha", database: "$database");
+
 if ($conexao->connect_error) {
-    die("Connection failed: " . $conexao->connect_error);
+    die("Conexão falhou: " . $conexao->connect_error);
 }
-?>

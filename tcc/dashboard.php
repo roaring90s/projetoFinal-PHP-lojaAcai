@@ -2,6 +2,7 @@
 session_start();
 $_SESSION['login'] = 'admin';
 $nome_usuario = $_SESSION['login'];
+
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -14,7 +15,7 @@ $nome_usuario = $_SESSION['login'];
     <!--LINK DO BOOTSTRAP 5-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <!--íCONES DO BOOTSTRAP-->
-    <link rel="icon" href="\ProjetoTCC\img\berry.png" type="image/x-icon" /> <!--�CONE DA P�GINA-->
+    <link rel="icon" href="\giorge\\ProjetoTCC\img\berry.png" type="image/x-icon" /> <!--�CONE DA P�GINA-->
     <link rel="preconnect" href="https://fonts.googleapis.com"> <!--LINK GOOGLE FONTS-->
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -54,7 +55,7 @@ $nome_usuario = $_SESSION['login'];
                 <div class="navbar-nav">
                     <a href="index.php" class="nav-link">Ínicio</a>
                     <a href="pedido.php" class="nav-link">Cardápio</a>
-                    <a href="logout.php" class="nav-link">Logout</a>
+                    <a href="logout.php" class="nav-link">Logout <i class="bi bi-person-fill"></i></a>
                 </div>
             </div>
         </div>
@@ -67,27 +68,30 @@ $nome_usuario = $_SESSION['login'];
         <div class="container py-4">
             <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 py-0">
                 <div class="col text-center mb-4">
-                    <div class="container">
-                        <div class="card h-100 bg-cards shadow-lg">
+                    <div class="container ">
+                        <div class="card bg-cards shadow-lg">
                             <div class="card-body ">
-                                <h5 class="card-title text-uppercase">FILA DE PEDIDOS</h5>
-                                <p class="card-text">Aqui você pode ver os pedidos pendentes e gerencia-los.</p>
-                                <button class="btn btn-primary"><a href="#" class="text-decoration-none link">VER FILA DE VENDAS</a></button>
+                                <h5 class="card-title text-uppercase">REGISTRAR VENDA</h5>
+                                <p class="card-text">Aqui você pode registrar as vendas ou ver as vendas já realizadas.</p>
+                                <button class="btn btn-primary"><a href="pdv.php" class="text-decoration-none link">ADICIONAR VENDAS</a></button>
                             </div>
                         </div>
                     </div>
                 </div>
+
+                
+        
                 <div class="col text-center mb-4">
-                    <div class="card h-100 bg-cards shadow-lg">
+                    <div class="card bg-cards shadow-lg">
                         <div class="card-body">
                             <h5 class="card-title text-uppercase text-center">ESTOQUE</h5>
                             <p class="card-text">Aqui você pode ver todos os ingredientes e gerenciar estoque.</p>
-                            <button class="btn btn-primary"><a href="#" class="card-link text-decoration-none link">ESTOQUE</a></button>
+                            <button class="btn btn-primary"><a href="estoque.php" class="card-link text-decoration-none link">ESTOQUE</a></button>
                         </div>
                     </div>
                 </div>
                 <div class="col col-md-06 text-center mb-4 d-flex align-items-center">
-                    <div class="card h-100 bg-cards shadow-lg">
+                    <div class="card bg-cards shadow-lg">
                         <div class="card-body">
                             <h5 class="card-title text-uppercase text-center">FUNCIONÁRIOS</h5>
                             <p class="card-text">Aqui você pode gerenciar todos os funcionários.</p>
@@ -107,7 +111,7 @@ $nome_usuario = $_SESSION['login'];
                     </div>
                 </div>
                 <div class="col col-md-06 text-center mb-4 d-flex align-items-center">
-                    <div class="card h-100 bg-cards shadow-lg">
+                    <div class="card bg-cards shadow-lg">
                         <div class="card-body">
                             <h5 class="card-title text-uppercase text-center">NOTAS FISCAIS</h5>
                             <p class="card-text">Gerenciamento das notas fiscais emitidas ao longo do dia.</p>
@@ -126,6 +130,19 @@ $nome_usuario = $_SESSION['login'];
                 </div>
             </div>
         </div>
+        <div class="container py-4">
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 py-0">
+                <div class="col text-center mb-4">
+                    <div class="container ">
+                        <div class="card bg-cards shadow-lg">
+                            <div class="card-body ">
+                                <h5 class="card-title text-uppercase">PEDIDOS</h5>
+                                <p class="card-text">Aqui você pode visualizar os pedidos pendentes.</p>
+                                <button class="btn btn-primary"><a href="pedidosPendente.php" class="text-decoration-none link">VER PEDIDOS</a></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
     </main>
     <?php
     include 'footer.php';

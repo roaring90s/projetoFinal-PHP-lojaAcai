@@ -1,8 +1,9 @@
-<!DOCTYPE html>
-<html lang="pt-br">
 <?php
 session_start();
+
 ?>
+<!DOCTYPE html>
+<html lang="pt-br">
 
 <head>
   <meta charset="UTF-8">
@@ -102,7 +103,7 @@ session_start();
             <div class="card-body">
               <h5 class="card-title">Açaís Super Premium</h5>
               <p class="card-text">A partir de <span class="badge bg-danger"> R$ 9,00</span></p>
-              <a href="carrinho2.php" class="btn btn-primary">Ver opções</a>
+              <a href="carrinho.php" class="btn btn-primary">Ver opções</a>
             </div>
           </div>
         </div>
@@ -113,7 +114,7 @@ session_start();
               <h5 class="card-title">Barca de Açaí</h5>
               <p class="card-text">+04 Acompanhamento, 2 frutas e 2 coberturas por <span
                   class="badge bg-danger">R$ 27,00</span></p>
-              <a href="carrinho3.php" class="btn btn-primary">Ver opções</a>
+              <a href="carrinho.php" class="btn btn-primary">Ver opções</a>
             </div>
           </div>
         </div>
@@ -123,7 +124,7 @@ session_start();
             <div class="card-body">
               <h5 class="card-title">Açaí + Creme de Iogurte Grego</h5>
               <p class="card-text">A partir de <span class="badge bg-danger">R$ 8,50</span></p>
-              <a href="carrinho4.php" class="btn btn-primary">Ver opções</a>
+              <a href="carrinho.php" class="btn btn-primary">Ver opções</a>
             </div>
           </div>
         </div>
@@ -133,7 +134,7 @@ session_start();
             <div class="card-body">
               <h5 class="card-title">Açaí Puro (ZERO AÇUCAR)</h5>
               <p class="card-text">A partir de <span class="badge bg-danger">R$ 9,00</span></p>
-              <a href="carrinho5.php" class="btn btn-primary">Ver opções</a>
+              <a href="carrinho.php" class="btn btn-primary">Ver opções</a>
             </div>
           </div>
         </div>
@@ -144,7 +145,7 @@ session_start();
               <h5 class="card-title">Açaí Premium + Sorbet ZERO LACTOSE de Maracujá ou Frutas Vermelhas
               </h5>
               <p class="card-text">A partir de <span class="badge bg-danger">R$ 9,00</span></p>
-              <a href="carrinho6.php" class="btn btn-primary">Ver opções</a>
+              <a href="carrinho.php" class="btn btn-primary">Ver opções</a>
             </div>
           </div>
         </div>
@@ -155,7 +156,7 @@ session_start();
               <h5 class="card-title">Açaí na Tigela 500ml</h5>
               <p class="card-text">+03 Acompanhamentos, 1 fruta e 2 coberturas por <span
                   class="badge bg-danger">R$ 19,90</span></p>
-              <a href="carrinho7.php" class="btn btn-primary">Ver opções</a>
+              <a href="carrinho.php" class="btn btn-primary">Ver opções</a>
             </div>
           </div>
         </div>
@@ -166,7 +167,7 @@ session_start();
               <h5 class="card-title">Milkshakes</h5>
               <p class="card-text">Ovomaltine ou Morango a partir de <span class="badge bg-danger">R$
                   12,50</span> </p>
-              <a href="carrinho8.php" class="btn btn-primary">Ver opções</a>
+              <a href="carrinho.php" class="btn btn-primary">Ver opções</a>
             </div>
           </div>
         </div>

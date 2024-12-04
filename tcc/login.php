@@ -1,3 +1,9 @@
+<?php
+if(!isset($_SESSION)){
+    session_start();
+}
+
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -64,30 +70,34 @@
 </head>
 
 <body>
-  <?php include('navbar.php') ?>
+  <?php include('navbar.php')
+      
+  
+  ?>
 
   <form action="logica_login.php" method="post">
 
     <div class="container-fluid p-5 text-center bg-transparent rounded bg">
       <div class=" container blurbox">
+      
         <h1>Faça agora seu login</h1>
         <h2>e aproveite o verdadeiro açaí </h2>
         <div class="container-fluid p-3 text-center">
-          <p class="fw-bold" >Login: <input type="text" name="login" id="login" class="border-1 input"
+          <p>Login: <input type="text" name="login_cliente" id="login_cliente" class="border-1 input"
               placeholder=" Login" required></p>
-          <p class="fw-bold" >Senha: <input type="password" name="senha" id="senha"
+          <p>Senha: <input type="password" name="senha" id="senha"
               class="border-1 input" placeholder=" Sua senha" required></p>
           <button type="submit" class="btn btn-primary">Fazer Login</button>
           <div class="container p-4">
-            <p class="fw-bold">Se preferir faça login com:</p>
-            <p><a href="#"><i class="bi bi-google" style="font-size: 1.5rem; color: white"></i></a> <!--LOGO DA GOOGLE-->
-              <a href="#"><i class="bi bi-apple" style="font-size: 1.5rem; color:white"></i></a> <!--LOGO DA APPLE-->
-              <a href="#"><i class="bi bi-instagram" style="font-size: 1.5rem; color: white"></i></a> <!--LOGO DO INSTAGRAM-->
+            <p>Se preferir faça login com:</p>
+            <p><a href="#"><i class="bi bi-google" style="color: white; font-size: 1.5rem;"></i></a> <!--LOGO DA GOOGLE-->
+              <a href="#"><i class="bi bi-apple" style="color: white; font-size: 1.5rem;"></i></a> <!--LOGO DA APPLE-->
+              <a href="#"><i class="bi bi-instagram" style="color: white; font-size: 1.5rem;"></i></a> <!--LOGO DO INSTAGRAM-->
               </a>
             </p>
           </div>
           <div class="container">
-            <p class="fw-bold" ><a href="registrar_conta.php" class="text-decoration-none link" >Não tem conta? Registre-se agora</a></p>
+            <p><a href="registrar_conta.php" class="text-decoration-none link" >Não tem conta? Registre-se agora</a></p>
           </div>
         </div>
       </div>

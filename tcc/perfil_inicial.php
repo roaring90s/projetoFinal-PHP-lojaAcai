@@ -1,6 +1,7 @@
 <?php
-session_start();
-$nome_usuario = $_SESSION['login'];
+
+include('protected.php');
+include('navbar.php');
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -23,23 +24,17 @@ $nome_usuario = $_SESSION['login'];
 </head>
 <style>
     body {
-        background: linear-gradient(45deg, #685080, #6545FF, #CC99FF);
+        background-color: #cb6ce6;
         color: white;
+
     }
+
 
 
     .fonte {
         font-family: "Merriweather", serif;
-        font-weight: 600;
+        font-weight: 900;
         color: white;
-        font-size: 60px;
-    }
-
-    .sub {
-        font-family: "Merriweather", serif;
-        font-weight: 400;
-        color: white;
-        font-size: 30px;
     }
 
     .carrinho:hover {
@@ -47,6 +42,9 @@ $nome_usuario = $_SESSION['login'];
         transition: all 0.9s ease-in-out;
     }
 
+    .img {
+        object-fit: cover;
+    }
 
     .logo {
         height: 100px;
@@ -56,7 +54,7 @@ $nome_usuario = $_SESSION['login'];
     }
 
     .botao {
-        background-color: #6545FF;
+        background-color: transparent;
         border-radius: 25px;
         /* Borda arredondada */
         padding: 10px 25px;
@@ -70,7 +68,6 @@ $nome_usuario = $_SESSION['login'];
         border: 2px solid;
         margin-bottom: 20px;
         border: 2px solid white;
-        color: white;
     }
 
     .bt {
@@ -103,8 +100,7 @@ $nome_usuario = $_SESSION['login'];
         /* Muda o cursor para indicar que é clicável */
         transition: all 1s ease;
         /* Transição suave ao passar o mouse */
-        border: 2px solid white;
-        color: white;
+        text-decoration: none;
     }
 
     .botao-principal a {
@@ -121,36 +117,24 @@ $nome_usuario = $_SESSION['login'];
 </style>
 
 <body>
-    <nav class="navbar bg-light navbar-expand-sm py-1">
-        <div class="container">
-            <a href="index.php" class="navbar-brand d-flex align-items-center">
-                <img src="\ProjetoTCC\img\LOGO-Rochedo2.ai.png" alt="Logo Rochedo Açaí" height="20%" width="20%">
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuNavbar"><span
-                    class="navbar-toggler-icon"></span></button>
-            <div class="collapse navbar-collapse" id="menuNavbar">
-                <div class="navbar-nav">
-                    <a href="index.php" class="nav-link">Ínicio</a>
-                    <a href="logout.php" class="nav-link">Logout</a>
-                    <a href="#" class="nav-link carrinho"><i class="bi bi-cart"></i></a>
-                </div>
-            </div>
-        </div>
-    </nav>
+    
     <main>
-        <div class="">
+        <div class="container" >
             <div class="row">
-                <div class="col-md-12 text-center ">
+            <div class="col-md-4 d-flex justify-content-start m-0 ">
+    <img src="\ProjetoTCC\img\acaicard.jpeg" alt="Açaí" class="img-fluid">
+</div>
+                <div class="col-md-6 text-center ">
                     <div class="container text-center">
-                        <div class="container">
-                            <img src="\ProjetoTCC\img\LOGO-Rochedo2.ai.png" alt="Logo Rochedo açaí" class="logo">
-                        </div>
-                        <p class="fonte mb-4">Seja bem-vindo <?php echo "$nome_usuario"; ?>.</p>
-                        <p class="sub mb-4">Qual sua fome hoje?</p>
+                    <div class="container-fluid p-0">
+    <img src="\ProjetoTCC\img\LOGO-Rochedo2.ai.png" alt="Logo Rochedo açaí" class="logo">
+</div>
+                        <h1 class="fonte mb-4">Seja bem-vindo <?php echo  $_SESSION['name']; ?>.</h1>
+                        <h5 class="fonte mb-4">Qual sua fome hoje?</h5>
                         <div class="btn-group-vertical bt" role="group" aria-label="Basic example">
-                            <button type="button" class=" botao-principal mb-4"><a href="#">Fazer pedido</a></button>
-                            <button type="button" class=" botao mb-4 "><a href="edit_perfil.php">Editar seu perfil</a></button>
-                            <button type="button" class=" botao mb-5"><a href="historico_pedidos.php">Histórico de pedidos</a></button>
+                            <button type="button" class=" botao-principal mb-4">Fazer pedido</button>
+                            <button type="button" class=" botao mb-4 ">Editar seu perfil</button>
+                            <button type="button" class=" botao mb-5">Histórico de pedidos</button>
                         </div>
                     </div>
                 </div>

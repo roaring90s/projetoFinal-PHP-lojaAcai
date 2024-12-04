@@ -1,6 +1,6 @@
 <?php
 include 'conexao.php';
-session_start();
+
 $_SESSION['login'] = 'admin';
 $nome_usuario = $_SESSION['login'];
 ?>
@@ -47,22 +47,9 @@ $nome_usuario = $_SESSION['login'];
 </style>
 
 <body>
-    <nav class="navbar bg-light navbar-expand-sm py-1 ">
-        <div class="container">
-            <a href="index.php" class="navbar-brand d-flex align-items-center">
-                <img src="\ProjetoTCC\img\LOGO-Rochedo2.ai.png" alt="Logo Rochedo Açaí" height="20%" width="20%">
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuNavbar"><span
-                    class="navbar-toggler-icon"></span></button>
-            <div class="collapse navbar-collapse" id="menuNavbar">
-                <div class="navbar-nav">
-                    <a href="index.php" class="nav-link">Ínicio</a>
-                    <a href="pedido.php" class="nav-link">Cardápio</a>
-                    <a href="logout.php" class="nav-link">Logout</a>
-                </div>
-            </div>
-        </div>
-    </nav>
+    <?php
+    include 'navbar.php';
+    ?>
     <main>
         <div class="container">
             <h1 class="text-center mt-3 mb-3">Lista de Funcionários</h1>

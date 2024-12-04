@@ -1,129 +1,132 @@
 <?php
 session_start();
+include("protected.php");
+include("navbar.php");
+
+// Função para adicionar produto ao carrinho
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $produto_id = $_POST['produto_id'];
+    $acompanhamentos = isset($_POST['acompanhamentos']) ? $_POST['acompanhamentos'] : [];
+    $produto_nome = "";
+    $produto_preco = 0;
+
+    // Lista de produtos disponíveis
+    $produtos = [
+        1 => ['name' => 'Copo de 200ML', 'price' => 7.50],
+        2 => ['name' => 'Copo de 300ML', 'price' => 10.50],
+        3 => ['name' => 'Copo de 400ML', 'price' => 13.50],
+        4 => ['name' => 'Copo de 500ML', 'price' => 16.50],
+        5 => ['name' => 'Copo de 700ML', 'price' => 19.50],
+    ];
+
+    if (isset($produtos[$produto_id])) {
+        $produto_nome = $produtos[$produto_id]['name'];
+        $produto_preco = $produtos[$produto_id]['price'];
+
+        if (!isset($_SESSION['carrinho'])) {
+            $_SESSION['carrinho'] = [];
+        }
+
+        // Verifica se o produto com os mesmos acompanhamentos já existe no carrinho
+        $encontrado = false;
+        foreach ($_SESSION['carrinho'] as &$item) {
+            if ($item['id'] == $produto_id && $item['acompanhamentos'] == $acompanhamentos) {
+                $item['quantity']++;
+                $encontrado = true;
+                break;
+            }
+        }
+
+        // Adiciona o produto ao carrinho se não foi encontrado
+        if (!$encontrado) {
+            $_SESSION['carrinho'][] = [
+                'id' => $produto_id,
+                'name' => $produto_nome,
+                'price' => $produto_preco,
+                'quantity' => 1,
+                'acompanhamentos' => $acompanhamentos
+            ];
+        }
+    }
+}
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-  <!--LINK DO BOOTSTRAP 5-->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-  <!--ÍCONES DO BOOTSTRAP-->
-  <link rel="icon" href="\ProjetoTCC\img\berry.png" type="image/x-icon" /> <!--ÍCONE DA PÁGINA-->
-  <link rel="preconnect" href="https://fonts.googleapis.com"> <!--LINK GOOGLE FONTS-->
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
-    rel="stylesheet">
-  <title>Carrinho de Compras</title>
-  <style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <title>Carrinho de Compras</title>
+</head>
+<style>
     html {
       scroll-behavior: smooth;
     }
-
     body {
       background: linear-gradient(45deg, #685080, #6545FF, #CC99FF);
       font-family: "Roboto", sans-serif;
       color: white;
     }
-
     .blur {
       backdrop-filter: blur(15px);
       background-color: rgba(255, 255, 255, 0.1);
     }
-  </style>
-</head>
-
+</style>
 <body>
-  <nav class="navbar bg-light navbar-expand-sm py-1 ">
-    <div class="container">
-      <a href="index.php" class="navbar-brand d-flex align-items-center">
-        <img src="\ProjetoTCC\img\LOGO-Rochedo2.ai.png" alt="Logo Rochedo Açaí" height="20%" width="20%">
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuNavbar"><span
-          class="navbar-toggler-icon"></span></button>
-      <div class="collapse navbar-collapse" id="menuNavbar">
-        <div class="navbar-nav">
-          <a href="index.php" class="nav-link">Ínicio</a>
-          <a href="pedido.php" class="nav-link">Cardápio</a>
-          <a href="logout.php" class="nav-link">Logout<i class="bi bi-person-fill"></i></a>
-        </div>
-      </div>
-    </div>
-  </nav>
-  <main>
     <div class="container py-5">
-      <h1 class="text-center">Açaís Premium</h1>
-      <h2 class="text-center"><span class="badge bg-danger ">+2 acompanhamentos</span></h2>
+        <h1 class="text-center">Açaís Premium</h1>
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-1">
+            <?php
+            $produtos = [
+                1 => ['name' => 'Copo de 200ML', 'price' => 7.50],
+                2 => ['name' => 'Copo de 300ML', 'price' => 10.50],
+                3 => ['name' => 'Copo de 400ML', 'price' => 13.50],
+                4 => ['name' => 'Copo de 500ML', 'price' => 16.50],
+                5 => ['name' => 'Copo de 700ML', 'price' => 19.50],
+            ];
+            foreach ($produtos as $id => $produto) {
+                echo "
+                <div class='col'>
+                    <div class='card'>
+                        <img src='\projetoTCC\ProjetoTCC\img\copo200.png' alt='{$produto['name']}' class='card-img-top'>
+                        <div class='card-body'>
+                            <h5 class='card-title'>{$produto['name']}</h5>
+                            <p class='card-text'>R$ " . number_format($produto['price'], 2, ',', '.') . "</p>
+                            <form action='carrinho.php' method='POST' class='mt-3'>
+                                <input type='hidden' name='produto_id' value='$id'>
+                                <div class='mb-3'>
+                                    <label class='form-label'>Escolha até dois acompanhamentos:</label>
+                                    <div>
+                                        <input type='checkbox' name='acompanhamentos[]' value='banana' class='form-check-input'> Banana<br>
+                                        <input type='checkbox' name='acompanhamentos[]' value='granola' class='form-check-input'> Granola<br>
+                                        <input type='checkbox' name='acompanhamentos[]' value='leite-condensado' class='form-check-input'> Leite Condensado<br>
+                                        <input type='checkbox' name='acompanhamentos[]' value='paçoca' class='form-check-input'> Paçoca<br>
+                                        <input type='checkbox' name='acompanhamentos[]' value='mel' class='form-check-input'> Mel<br>
+                                    </div>
+                                </div>
+                                <button type='submit' class='btn btn-success' onclick='return validarSelecao()'>
+                                    <i class='bi bi-cart-plus'></i> Adicionar ao carrinho
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>";
+            }
+            ?>
+        </div>
     </div>
-    <div class="container py-5">
-      <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-1">
-        <div class="col">
-          <div class="card blur">
-            <img src="\ProjetoTCC\img\copo200.png" alt="copo 200ml">
-            <div class="card-body bg-cards">
-              <h5 class="card-title text-center">Copo de 200ML</h5>
-              <p class="card-text text-center"><span class="badge bg-danger">R$
-                  7,50</span></p>
-              <p class="text-center"><a href="carrinho.php" class="btn btn-success"> <i class="bi bi-cart-plus"></i>
-                  Adicionar ao carrinho</a></p>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card blur">
-            <img src="\ProjetoTCC\img\copo200.png" alt="copo 300ml">
-            <div class="card-body">
-              <h5 class="card-title text-center">Copo de 300ML</h5>
-              <p class="card-text text-center"><span class="badge bg-danger"> R$ 10,50</span></p>
-              <p class="text-center"><a href="carrinho.php" class="btn btn-success"> <i class="bi bi-cart-plus"></i>
-                  Adicionar ao carrinho</a></p>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card blur">
-            <img src="\ProjetoTCC\img\copo200.png" alt="copo 400ml">
-            <div class="card-body">
-              <h5 class="card-title text-center">Copo de 400ML</h5>
-              <p class="card-text text-center"><span class="badge bg-danger">R$ 13,50</span></p>
-              <p class="text-center"><a href="carrinho.php" class="btn btn-success"> <i class="bi bi-cart-plus"></i>
-                  Adicionar ao carrinho</a></p>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card blur">
-            <img src="\ProjetoTCC\img\copo500+.png" alt="">
-            <div class="card-body">
-              <h5 class="card-title text-center">Copo de 500ML</h5>
-              <p class="card-text text-center"><span class="badge bg-danger">R$ 16,50</span></p>
-              <p class="text-center"><a href="carrinho.php" class="btn btn-success"> <i class="bi bi-cart-plus"></i>
-                  Adicionar ao carrinho</a></p>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card blur">
-            <img src="\ProjetoTCC\img\copo500+.png" alt="">
-            <div class="card-body">
-              <h5 class="card-title">Copo de 700ML</h5>
-              <p class="card-text text-center"><span class="badge bg-danger">R$ 19,50</span></p>
-              <p class="text-center"><a href="carrinho.php" class="btn btn-success"> <i class="bi bi-cart-plus"></i>
-                  Adicionar ao carrinho</a></p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </main>
-  <?php
-  include('footer.php');
-  ?>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function validarSelecao() {
+            const checkboxes = document.querySelectorAll("input[name='acompanhamentos[]']:checked");
+            if (checkboxes.length > 2) {
+                alert("Você pode escolher no máximo dois acompanhamentos.");
+                return false;
+            }
+            return true;
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5/dist/js/bootstrap.bundle.min.js"></script>
+    <?php include("footer.php"); ?>
 </body>
-
 </html>

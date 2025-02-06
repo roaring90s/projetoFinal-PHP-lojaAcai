@@ -15,21 +15,19 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
     rel="stylesheet">
-  <style>
+    <style>
     .font {
       text-align: center;
       border-right: 4px solid;
-      -webkit-background-clip: text;
-      text-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
       font-size: 2.5rem;
       position: absolute;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      width: 35ch;
       overflow: hidden;
-      animation: animatext 0.9s linear infinite, anima steps(35) 2s;
       white-space: nowrap;
+      width: 0;
+      animation: anima steps(47) 4.7s forwards;
       
     }
 
@@ -78,17 +76,20 @@
     }
 
     @keyframes animatext {
-      50% {
+      55% {
         border-right: transparent;
       }
     }
 
     @keyframes anima {
-      0% {
-        width: 0;
+       from {
+         width: 0;
+     }
+      to {
+        width: 36ch; /* Agora cobre exatamente o tamanho da frase */
       }
+}
 
-    }
   </style>
   <title>Rochedo Açaí</title>
 </head>
@@ -100,8 +101,8 @@
   <main>
     <!--===============================================================IMAGEM PRINCIPAL===============================================================================-->
     <div class="text">
-      <h1 class="font animatext">Energize seu dia com o sabor incivel do açaí! </h1>
-      <img src="\projetoTCC\ProjetoTCC\img\fotoprincipal.webp" alt="Açaí delicioso" class="img-fluid">
+      <h1 class="font animatext">Energize seu dia com o sabor incrível do açaí!</h1>
+      <img src="\rochedoAcai\img\fotoprincipal.webp" alt="Açaí delicioso" class="img-fluid">
     </div>
     <!--=================================================================CARDS PÁGINA PRINCIPAL=======================================================================-->
     <div class="container py-4">
@@ -111,8 +112,7 @@
             <div class="card bg-cards shadow-lg">
               <div class="card-body ">
                 <h5 class="card-title text-uppercase">O melhor açaí do df</h5>
-                <p class="card-text">o Rochedo Açaí tem o compromisso de oferecer o melhor açaí que seu dinheiro pode
-                  pagar!</p>
+                <p class="card-text">o Rochedo Açaí tem o compromisso de oferecer o melhor açaí que seu dinheiro pode pagar!</p>
                 <i class="bi bi-award medalha"></i>
               </div>
             </div>
@@ -149,8 +149,7 @@
           <div class="card bg-cards shadow-lg">
             <div class="card-body">
               <h5 class="card-title text-uppercase text-center">desconto primeira compra</h5>
-              <p class="card-text text-center">É sua primeira vez por aqui? Pois você tem um desconto especial conosco,
-                crie sua conta agora e aproveite o melhor açaí da sua vida naquele precinho especial.</p>
+              <p class="card-text text-center">É sua primeira vez por aqui? Pois você tem um desconto especial conosco! Crie sua conta agora e aproveite o melhor açaí da sua vida naquele precinho especial.</p>
               <p class="text-center"><i class="bi bi-currency-dollar"></i></p>
             </div>
           </div>

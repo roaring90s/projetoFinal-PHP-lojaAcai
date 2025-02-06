@@ -4,10 +4,8 @@
         <div class="row text-center text-md-left">
             <div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
                 <!--===========================================DIV COM UMA COLUNA DO RODAPÉ=============================================================-->
-                <h5 class="text-uppercase mb-4 font-weight-bold text-white">Rochedo Açaís</h5>
-                <p>Criada em 2020, a Rochedo Açaís foi feita com o intuito e objetivo de servir e entregar os melhores
-                    sabores
-                    da cidade, prezando sempre pela satisfação do cliente.</p>
+                <h5 class="text-uppercase mb-4 font-weight-bold text-white">Rochedo Açaí</h5>
+                <p>Criada em 2020, a Rochedo Açaí foi feita com o intuito e objetivo de servir e entregar os melhores sabores da cidade, prezando sempre pela satisfação do cliente.</p>
             </div>
             <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
                 <!--========================================DIV COM A SEGUNDA COLUNA DO RODAPÉ=========================================================-->
@@ -26,7 +24,7 @@
                 <h5 class="text-uppercase mb-4 font-weight-bold text-white">CONTATO</h5>
                 <!--=====================DIV COM A TERCEIRA COLUNA DO RODAPÉ======================================================-->
                 <p>
-                    <i class="bi bi-house"></i> Rochedo Açaís, SH Arniqueiras QS 8 - Taguatingua,Brasília
+                    <i class="bi bi-house"></i> Rochedo Açaí, SH Arniqueiras QS 8 - Taguatinga,Brasília
                 </p>
                 <p>
                     <i class="bi bi-telephone"></i> SAC (61) 98922-5422
@@ -39,8 +37,7 @@
         <hr class="mb-4">
         <div class="row align-items-center">
             <div class="col-md-7 col-lg-8">
-                <p> Copyright ©2024 Todos os direitos reservados by: <a href="#" style="text-decoration: none;"> Rochedo
-                        açaís</a></p>
+                <p> Copyright ©2024 Todos os direitos reservados by: <a href="#" style="text-decoration: none;"> Rochedo Açaí</a></p>
             </div>
             <div class="col-md-5 col-lg-4">
                 <div class="text-center text-md-right">
